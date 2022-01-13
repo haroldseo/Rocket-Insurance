@@ -5,11 +5,11 @@ type TonClientSubmit = { onClientSubmit: (client: Client) => void };
 
 const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
   const [client, setClient] = useState<Client>({
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    last_name: "",
     address: {
-      line1: "",
-      line2: "",
+      line_1: "",
+      line_2: "",
       city: "",
       region: "",
       postal: "",
@@ -40,8 +40,8 @@ const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
               <input
                 type='text'
                 onChange={onNameInputChange}
-                value={client.firstName}
-                name='firstName'
+                value={client.first_name}
+                name='first_name'
                 placeholder='First Name'
               />
             </div>
@@ -49,8 +49,8 @@ const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
               <input
                 type='text'
                 onChange={onNameInputChange}
-                value={client.lastName}
-                name='lastName'
+                value={client.last_name}
+                name='last_name'
                 placeholder='Last Name'
               />
             </div>
@@ -63,8 +63,8 @@ const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
               <input
                 type='text'
                 onChange={onAddressInputChange}
-                value={client.address.line1}
-                name='line1'
+                value={client.address.line_1}
+                name='line_1'
                 placeholder='Street'
               />
             </div>
@@ -72,8 +72,8 @@ const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
               <input
                 type='text'
                 onChange={onAddressInputChange}
-                value={client.address.line2}
-                name='line2'
+                value={client.address.line_2}
+                name='line_2'
                 placeholder='Apt, Unit, Suite'
               />
             </div>
