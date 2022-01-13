@@ -1,9 +1,10 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import { Client } from "../../interfaces/client";
 
-import { client } from "../../interfaces/client";
+type TonClientSubmit = { onClientSubmit: (client: Client) => void };
 
-const RatingInformation = () => {
-  const [client, setClient] = useState<client>({
+const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
+  const [client, setClient] = useState<Client>({
     firstName: "",
     lastName: "",
     address: {
@@ -17,7 +18,6 @@ const RatingInformation = () => {
 
   const onNameInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setClient({ ...client, [e.target.name]: e.target.value });
-    console.log(client);
   };
 
   const onAddressInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -26,6 +26,8 @@ const RatingInformation = () => {
 
   const onFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    onClientSubmit(client);
   };
 
   return (

@@ -1,11 +1,16 @@
 import React from "react";
 
+import { Client } from "../interfaces/client";
 import RatingInformation from "./RatingInformation/RatingInformation";
 
 const App = () => {
+  const onClientSubmit = (client: Client) => {
+    console.log(client);
+  };
+
   return (
     <div className='ui container'>
-      <RatingInformation />
+      <RatingInformation onClientSubmit={onClientSubmit} />
     </div>
   );
 };
