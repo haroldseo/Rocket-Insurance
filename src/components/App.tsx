@@ -4,7 +4,7 @@ import RatingInformation from "./RatingInformation/RatingInformation";
 
 const App = () => {
   return (
-    <div>
+    <div className='ui container'>
       <RatingInformation />
     </div>
   );
