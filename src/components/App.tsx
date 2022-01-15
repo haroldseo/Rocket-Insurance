@@ -1,18 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import { Client } from "../interfaces/client";
+import { Quote } from "../interfaces/quote";
 import RatingInformation from "./RatingInformation/RatingInformation";
+import QuoteOverview from "./QuoteOverview/QuoteOverview";
 
 const App = () => {
+  const [quote, setQuote] = useState<Quote>({
+    quoteId: "",
+    rating_address: {
+      line_1: "",
+      line_2: "",
+      city: "",
+      region: "",
+      postal: "",
+    },
+    policy_holder: {
+      first_name: "",
+      last_name: "",
+    },
+    variable_options: {
+      deductible: {
+        title: "",
+        description: "",
+        values: [],
+      },
+      asteroid_collision: {
+        title: "",
+        description: "",
+        values: [],
+      },
+    },
+    variable_selections: {
+      deductible: 0,
+      asteroid_collision: 0,
+    },
+    premium: 0,
+  });
+
   const onClientSubmit = async (client: Client) => {
     const response = await axios.post("https://fed-challenge-api.sure.now.sh/api/v1/quotes", client);
-    console.log(response.data.quote);
+
+    setQuote(response.data.quote);
   };
 
   return (
     <div className='ui container'>
       <RatingInformation onClientSubmit={onClientSubmit} />
+      <QuoteOverview quote={quote} />
     </div>
   );
 };
