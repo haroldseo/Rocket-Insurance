@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Client } from "../interfaces/client";
 import { Quote } from "../interfaces/quote";
@@ -46,10 +47,15 @@ const App = () => {
   };
 
   return (
-    <div className='ui container'>
-      <RatingInformation onClientSubmit={onClientSubmit} />
-      <QuoteOverview quote={quote} />
-    </div>
+    <Router>
+      <div className='ui container'>
+        <h2>Rocket Insurance</h2>
+        <Routes>
+          <Route path='/' element={<RatingInformation onClientSubmit={onClientSubmit} />} />
+          <Route path='/quote' element={<QuoteOverview quote={quote} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 

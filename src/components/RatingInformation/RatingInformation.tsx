@@ -1,4 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Client } from "../../interfaces/client";
 
@@ -17,6 +18,8 @@ const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
     },
   });
 
+  const navigate = useNavigate();
+
   const onNameInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setClient({ ...client, [e.target.name]: e.target.value });
   };
@@ -29,6 +32,7 @@ const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
     e.preventDefault();
 
     onClientSubmit(client);
+    navigate("/quote");
   };
 
   return (
