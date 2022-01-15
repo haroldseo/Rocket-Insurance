@@ -34,14 +34,16 @@ const QuoteOverview = ({ quote }: Tquote) => {
       <form className='ui form'>
         <div className='two fields'>
           <div className='field'>
-            <label htmlFor='deductible'>Deductible:</label>
-            <select className='ui dropdown' id='deductible' name='deductible'>
+            <h4>{deductibleOptions.title}:</h4>
+            <p>{deductibleOptions.description}</p>
+            <select className='ui dropdown' name='deductible'>
               {deductibles}
             </select>
           </div>
           <div className='field'>
-            <label htmlFor='asteroid_collision'>Asteroid Collision:</label>
-            <select className='ui dropdown' id='asteroid_collision' name='asteroid_collision'>
+            <h4>{asteroidCollisionOptions.title}:</h4>
+            <p>{asteroidCollisionOptions.description}</p>
+            <select className='ui dropdown' name='asteroid_collision'>
               {asteroid_collisions}
             </select>
           </div>
