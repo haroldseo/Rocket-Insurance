@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "./App.css";
 
 import { Client } from "../interfaces/client";
 import { Quote } from "../interfaces/quote";
@@ -48,12 +49,16 @@ const App = () => {
 
   return (
     <Router>
-      <div className='ui container'>
-        <h2>Rocket Insurance</h2>
-        <Routes>
-          <Route path='/' element={<RatingInformation onClientSubmit={onClientSubmit} />} />
-          <Route path='/quote' element={<QuoteOverview quote={quote} />} />
-        </Routes>
+      <Link to={"/"}>
+        <h2 className='header'>Rocket Insurance 🚀</h2>
+      </Link>
+      <div className='ui text container'>
+        <div className='ui segment'>
+          <Routes>
+            <Route path='/' element={<RatingInformation onClientSubmit={onClientSubmit} />} />
+            <Route path='/quote' element={<QuoteOverview quote={quote} />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );

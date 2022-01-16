@@ -37,6 +37,7 @@ const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
 
   return (
     <div>
+      <h1 className='component-header'>Sign up for a free quote!</h1>
       <form onSubmit={onFormSubmit} className='ui form'>
         <div className='field'>
           <label>Name</label>
@@ -48,6 +49,7 @@ const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
                 value={client.first_name}
                 name='first_name'
                 placeholder='First Name'
+                required
               />
             </div>
             <div className='field'>
@@ -57,6 +59,7 @@ const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
                 value={client.last_name}
                 name='last_name'
                 placeholder='Last Name'
+                required
               />
             </div>
           </div>
@@ -71,6 +74,7 @@ const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
                 value={client.address.line_1}
                 name='line_1'
                 placeholder='Street'
+                required
               />
             </div>
             <div className='four wide field'>
@@ -92,6 +96,7 @@ const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
               value={client.address.city}
               name='city'
               placeholder='City'
+              required
             />
           </div>
           <div className='field'>
@@ -100,7 +105,8 @@ const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
               onChange={onAddressInputChange}
               value={client.address.region}
               name='region'
-              placeholder='Region'
+              placeholder='State'
+              required
             />
           </div>
           <div className='field'>
@@ -110,6 +116,7 @@ const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
               value={client.address.postal}
               name='postal'
               placeholder='Postal'
+              required
             />
           </div>
         </div>

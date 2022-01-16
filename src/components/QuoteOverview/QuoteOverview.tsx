@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Quote } from "../../interfaces/quote";
 import { UpdatedQuote } from "../../interfaces/updatedQuote";
@@ -16,6 +17,8 @@ const QuoteOverview = ({ quote }: Tquote) => {
       variable_selections: quote.variable_selections,
     },
   });
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     setUpdatedQuote({
@@ -71,9 +74,13 @@ const QuoteOverview = ({ quote }: Tquote) => {
   };
 
   return (
-    <div className='ui container'>
-      <h3>Quote Overview</h3>
-      <div>Annual Premium: {premium}</div>
+    <div>
+      <div className='component-header'>
+        <h1>
+          Annual Premium:
+          <br />${premium}
+        </h1>
+      </div>
 
       <form onSubmit={onUpdateSubmit} className='ui form'>
         <div className='two fields'>
@@ -94,6 +101,14 @@ const QuoteOverview = ({ quote }: Tquote) => {
         </div>
         <button className='ui button' type='submit'>
           Update
+        </button>
+        <button
+          className='ui button right'
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
+          Start Over
         </button>
       </form>
     </div>

@@ -1,0 +1,25 @@
+.header {
+  margin: 20px !important;
+  color: black;
+}
+
+.ui.container {
+  margin-top: 80px;
+}
+
+.ui.segment {
+  padding: 2em !important;
+}
+
+.component-header {
+  text-align: center;
+  margin: 5px 0 25px 0 !important;
+}
+
+.right {
+  float: right;
+}
+
+.ui.button {
+  margin: 0;
+}
