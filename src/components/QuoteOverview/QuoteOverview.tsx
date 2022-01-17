@@ -32,7 +32,7 @@ const QuoteOverview = ({ quote }: Tquote) => {
       },
     });
     setPremium(quote.premium);
-  }, [quote]);
+  }, [quote, updatedQuote]);
 
   const deductibleOptions = quote.variable_options.deductible;
   const deductibles = deductibleOptions.values.map((deductible) => {
@@ -75,42 +75,44 @@ const QuoteOverview = ({ quote }: Tquote) => {
 
   return (
     <div>
-      <div className='component-header'>
-        <h1>
-          Annual Premium:
-          <br />${premium}
-        </h1>
-      </div>
-
-      <form onSubmit={onUpdateSubmit} className='ui form'>
-        <div className='two fields'>
-          <div className='field'>
-            <h4>{deductibleOptions.title}:</h4>
-            <p>{deductibleOptions.description}</p>
-            <select className='ui dropdown' onChange={onSelectionChange} name='deductible'>
-              {deductibles}
-            </select>
-          </div>
-          <div className='field'>
-            <h4>{asteroidCollisionOptions.title}:</h4>
-            <p>{asteroidCollisionOptions.description}</p>
-            <select className='ui dropdown' onChange={onSelectionChange} name='asteroid_collision'>
-              {asteroid_collisions}
-            </select>
-          </div>
+      <div className='quote-overview-container'>
+        <div className='component-header'>
+          <h1>
+            Annual Premium:
+            <br />${premium}
+          </h1>
         </div>
-        <button className='ui button' type='submit'>
-          Update
-        </button>
-        <button
-          className='ui button right'
-          onClick={() => {
-            navigate(-1);
-          }}
-        >
-          Start Over
-        </button>
-      </form>
+
+        <form onSubmit={onUpdateSubmit} className='ui form'>
+          <div className='two fields'>
+            <div className='field'>
+              <h4>{deductibleOptions.title}</h4>
+              <p>{deductibleOptions.description}</p>
+              <select className='ui dropdown' onChange={onSelectionChange} name='deductible'>
+                {deductibles}
+              </select>
+            </div>
+            <div className='field'>
+              <h4>{asteroidCollisionOptions.title}</h4>
+              <p>{asteroidCollisionOptions.description}</p>
+              <select className='ui dropdown' onChange={onSelectionChange} name='asteroid_collision'>
+                {asteroid_collisions}
+              </select>
+            </div>
+          </div>
+          <button className='ui button' type='submit'>
+            Update
+          </button>
+          <button
+            className='ui button right'
+            onClick={() => {
+              navigate(-1);
+            }}
+          >
+            Start Over
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
