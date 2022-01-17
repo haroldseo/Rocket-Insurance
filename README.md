@@ -6,4 +6,4 @@ As interplanetary travel becomes mainstream, we're excited to offer rocket owner
 
 First, the user will have to fill out a form to get a free quote. Then the user will be taken to a different page that displays the current annual premium. There will also be two dropdown menus for deductibles and asteroid collision that the user can use to update the annual premium.
 
-Click [here] for free quote!(http://rocket-insurance-sure.herokuapp.com/)
+Click [here](http://rocket-insurance-sure.herokuapp.com/) for free quote!
