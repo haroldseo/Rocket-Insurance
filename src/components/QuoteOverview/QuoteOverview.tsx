@@ -32,7 +32,7 @@ const QuoteOverview = ({ quote }: Tquote) => {
       },
     });
     setPremium(quote.premium);
-  }, [quote, updatedQuote]);
+  }, [quote]);
 
   const deductibleOptions = quote.variable_options.deductible;
   const deductibles = deductibleOptions.values.map((deductible) => {
