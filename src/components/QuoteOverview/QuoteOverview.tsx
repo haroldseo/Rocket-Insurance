@@ -77,7 +77,7 @@ const QuoteOverview = ({ quote }: Tquote) => {
     <div>
       <div className='quote-overview-container'>
         <div className='component-header'>
-          <h1>
+          <h1 data-testid='quote_overview_header'>
             Annual Premium:
             <br />${premium}
           </h1>
