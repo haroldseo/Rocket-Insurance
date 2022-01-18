@@ -38,7 +38,7 @@ const RatingInformation = ({ onClientSubmit }: TonClientSubmit) => {
   return (
     <div>
       <h1 className='component-header'>Sign up for a free quote!</h1>
-      <form onSubmit={onFormSubmit} className='ui form'>
+      <form data-testid='rating_info' onSubmit={onFormSubmit} className='ui form'>
         <div className='field'>
           <label>Name</label>
           <div className='two fields'>
