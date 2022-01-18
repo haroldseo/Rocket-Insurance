@@ -1,6 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent, cleanup } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, screen, cleanup } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import QuoteOverview from "./QuoteOverview";
@@ -37,7 +36,7 @@ const mockQuote = {
   premium: 0,
 };
 
-const mockQuoteUpdate = jest.fn(() => Promise.resolve({ data: {} }));
+// const mockQuoteUpdate = jest.fn(() => Promise.resolve({ data: {} }));
 
 describe("Quote Overview Component", () => {
   afterEach(cleanup);
