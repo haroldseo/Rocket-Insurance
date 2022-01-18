@@ -11,20 +11,16 @@ An application that takes in user inputs and provides an insurance quote. First,
 1. Clone down the repository.
 2. Install `node` and `npm`
 
-Installation:
+_Installation:_
 
-#### `npm install`
+**`npm install`** to build dependencies
 
-To build dependencies
+_Start Server:_
 
-Start Server:
+**`npm start`** starts application on local port 3000
 
-#### `npm start`
+_Run Tests:_
 
-Starts application on local port 3000
-
-Run Tests:
-
-#### `npm test`
+**`npm test`**
 
 #### Click [here](http://rocket-insurance-sure.herokuapp.com/) for free quote!
