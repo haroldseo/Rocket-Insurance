@@ -4,23 +4,27 @@ As interplanetary travel becomes mainstream, we're excited to offer rocket owner
 
 ## How It Works
 
-First, the user will have to fill out a form to get their free quote. Then the user will be taken to a different page that displays their quote, including the current annual premium. There will also be two dropdown menus for deductibles and asteroid collision that the user can use to update the annual premium.
+An application that takes in user inputs and provides an insurance quote. First, the user will have to fill out a form with name and address. Upon submitting the form, the user will be taken to a different page that displays their insurance quote, including the current annual premium. The user will be provided with two dropdown menus, one for deductibles and one for asteroid collision, and will have the option to update their annual premium by changing the values of the dropdown menus.
 
 ## Installation and Setup
 
-Clone down the repository.
-You will need `node` and `npm` installed.
+1. Clone down the repository.
+2. Install `node` and `npm`
 
 Installation:
 
-`npm install`
+#### `npm install`
+
+To build dependencies
 
 Start Server:
 
-`npm start`
+#### `npm start`
+
+Starts application on local port 3000
 
 Run Tests:
 
-`npm test`
+#### `npm test`
 
-Click [here](http://rocket-insurance-sure.herokuapp.com/) for free quote!
+#### Click [here](http://rocket-insurance-sure.herokuapp.com/) for free quote!
